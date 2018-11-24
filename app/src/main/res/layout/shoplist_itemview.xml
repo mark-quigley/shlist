@@ -14,13 +14,22 @@
         android:padding="6dp">
 
         <TextView
-            android:id="@+id/itemview_quote"
+            android:id="@+id/itemview_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:text="Item Description here"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
+
+        <!--<TextView-->
+            <!--android:id="@+id/itemquantity_item"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:maxLines="1"-->
+            <!--android:text="Item Description here"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="20sp" />-->
 
         <TextView
             android:id="@+id/itemview_aldi"
@@ -33,7 +42,7 @@
             android:id="@+id/itemview_lidl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center"
             android:text="lidl price" />
 
         <TextView

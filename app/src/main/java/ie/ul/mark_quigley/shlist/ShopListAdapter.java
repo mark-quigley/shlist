@@ -79,8 +79,8 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
 
         public ShopListViewHolder(@NonNull View itemView) {
             super(itemView);
-            mItemTextView = itemView.findViewById(R.id.itemview_quote);
-          //  mItemTextView = itemView.findViewById(R.id.itemview_item);
+            //mItemTextView = itemView.findViewById(R.id.itemview_quote);
+            mItemTextView = itemView.findViewById(R.id.itemview_item);
             mAldiTextView = itemView.findViewById(R.id.itemview_aldi);
             mLidlTextView = itemView.findViewById(R.id.itemview_lidl);
             mDunnesTextView = itemView.findViewById(R.id.itemview_dunnes);

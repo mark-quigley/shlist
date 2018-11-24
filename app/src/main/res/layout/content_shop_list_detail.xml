@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/detail_item"
-        android:text="Item goes here"
+        android:text=" Edit item goes here"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:layout_margin="20dp"
@@ -33,7 +33,7 @@
 
     <TextView
         android:id="@+id/detail_aldi_price"
-        android:text="Price goes here"
+        android:text="Aldi Price goes here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:layout_margin="20dp"
@@ -48,7 +48,7 @@
 
     <TextView
         android:id="@+id/detail_lidl_price"
-        android:text="Price goes here"
+        android:text="Lidi Price goes here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:layout_margin="20dp"
@@ -63,7 +63,7 @@
 
     <TextView
         android:id="@+id/detail_dunnes_price"
-        android:text="Price goes here"
+        android:text="Dunnes Price goes here"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         android:layout_margin="20dp"

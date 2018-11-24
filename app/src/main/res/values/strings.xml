@@ -2,4 +2,12 @@
     <string name="app_name">shlist</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_shop_list_detail">Shop List</string>
+    <string name="hint_desc">Add an item</string>
+    <string name="default_digits">1234567890.,</string>
+    <string name="default_digit">1234567890</string>
+    <string name="total">Total</string>
+    <string name="quantity_title">Qty</string>
+    <string name="aldi">Aldi</string>
+    <string name="lidl">Lidl</string>
+    <string name="dunnes_stores">DS</string>
 </resources>

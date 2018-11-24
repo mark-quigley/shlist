@@ -61,8 +61,11 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.shoplist_dialog, null, false);
         builder.setView(view);
-        builder.setTitle("Add item");
+        // Opening window in the app
+        builder.setTitle("Main Add item");
+        
         final TextView itemEditText = view.findViewById(R.id.dialog_item_edittext);
+       final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
@@ -71,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 Map<String, Object> sl = new HashMap<>();
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
+                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
                 sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
                 sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());

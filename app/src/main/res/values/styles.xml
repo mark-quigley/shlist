@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -16,5 +16,63 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    // Shoplist orig
+    <style name="wrapWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wrapMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="matchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="matchMatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="mediumFont" parent="@style/wrapWrap">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="bigFont" parent="@style/wrapWrap">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="totalFont" parent="@style/wrapWrap">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="customViewStyles" parent="matchMatch">
+        <item name="android:background">@color/gray_backgourd</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="customListViewStyles" parent="@style/matchWrap">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:drawSelectorOnTop">true</item>
+    </style>
+
+    <style name="customFooterBarStyles" parent="@style/matchWrap">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@drawable/custom_blanck_backgroud</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
 
 </resources>

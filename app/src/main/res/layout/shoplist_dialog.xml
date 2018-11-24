@@ -1,31 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    style="@style/customViewStyles"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
 
-    <EditText
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <!--style="@style/customViewStyles"-->
+    <TableRow android:layout_marginBottom="5dp" >
+
+        <EditText
         android:id="@+id/dialog_item_edittext"
-        android:hint="Enter an Item here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/dialog_aldi_edittext"
-        android:hint="Enter a price here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/dialog_lidl_edittext"
-        android:hint="Enter a price here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:id="@+id/dialog_dunnes_edittext"
-        android:hint="Enter a price here"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            android:background="@color/black_brake"
+            style="@style/matchMatch"
+            android:layout_width="match_parent"
+            android:completionThreshold="1"
+            android:hint="@string/hint_desc"
+            android:imeOptions="actionNext"
+            android:inputType="textCapSentences"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
 
-</LinearLayout>
+
+
+
+            android:singleLine="true"
+            android:textStyle="normal"
+            tools:targetApi="jelly_bean_mr1"
+
+           />
+        <!--android:background="@drawable/solid_white"
+        android:paddingStart="5dp"
+
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+        android:paddingLeft="5dp"
+        android:padding="5dp"-->
+
+        <EditText
+        android:id="@+id/dialog_quantity_edittext"
+
+            android:layout_width="wrap_content"
+            android:background="@color/black_brake"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+
+            android:digits="@string/default_digit"
+            android:hint="@string/quantity_title"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal|number"
+            android:maxLength="2"
+
+            android:singleLine="true"
+            />
+        <!--android:padding="5dp"-->
+        <EditText
+        android:id="@+id/dialog_aldi_edittext"
+            android:layout_width="wrap_content"
+            android:background="@color/black_brake"
+            android:hint="@string/aldi"
+            android:digits="@string/default_digits"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal|number"
+            android:maxLength="5"
+
+            android:singleLine="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+
+           />
+        <!--android:layout_marginLeft="5dp"
+        android:padding="5dp"-->
+
+        <EditText
+            android:id="@+id/dialog_lidl_edittext"
+            android:hint="@string/lidl"
+            android:background="@color/black_brake"
+            android:layout_width="wrap_content"
+            android:digits="@string/default_digits"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal|number"
+            android:maxLength="5"
+
+            android:singleLine="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+        <EditText
+        android:id="@+id/dialog_dunnes_edittext"
+            android:hint="@string/dunnes_stores"
+            android:layout_width="wrap_content"
+            android:background="@color/black_brake"
+
+            android:digits="@string/default_digits"
+            android:imeOptions="actionGo"
+            android:inputType="numberDecimal|number"
+            android:maxLength="5"
+
+            android:singleLine="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+
+            />
+
+        <!--android:layout_marginLeft="5dp"
+        android:padding="5dp"-->
+
+    </TableRow>
+
+    <RelativeLayout style="@style/matchMatch" >
+
+        <RelativeLayout
+            android:id="@+id/footer_bar"
+            style="@style/customFooterBarStyles"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/totalFont"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="start"
+                android:text="@string/total" />
+
+
+            <TextView
+                android:id="@+id/footer_total_quant"
+                style="@style/totalFont"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toStartOf="@+id/footer_total_sum"
+                android:layout_toLeftOf="@+id/footer_total_sum"
+                android:text="Things"
+                android:layout_gravity="end" />
+
+            <TextView
+                android:id="@+id/footer_total_sum"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                style="@style/totalFont"
+                android:text="Cost"
+                android:layout_gravity="end" />
+        </RelativeLayout>
+
+        <LinearLayout
+            style="@style/matchWrap"
+            android:layout_above="@id/footer_bar"
+            android:animateLayoutChanges="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp" >
+
+            <ListView
+                android:id="@+id/lvItemShoppingList"
+                style="@style/customListViewStyles"
+                android:background="@drawable/solid_white" >
+            </ListView>
+        </LinearLayout>
+    </RelativeLayout>
+
+</TableLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical"-->
+    <!--android:padding="8dp">-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/edDescription"-->
+        <!--android:id="@+id/dialog_item_edittext"-->
+        <!--android:hint="SHL_D Item wanted here"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    <!--android:id="@+id/edQuantity"-->
+
+    <!--<EditText-->
+
+    <!--android:id="@+id/edUnitValue"-->
+        <!--android:id="@+id/dialog_aldi_edittext"-->
+        <!--android:hint="Enter Main Aldi price here"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/edUnitValue1"-->
+        <!--android:id="@+id/dialog_lidl_edittext"-->
+        <!--android:hint="Enter Lidl price here"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <!--<EditText-->
+
+    <!--android:id="@+id/edUnitValue2"-->
+        <!--android:id="@+id/dialog_dunnes_edittext"-->
+        <!--android:hint="Enter Dunnes price here"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+
+<!--</LinearLayout>-->

@@ -11,7 +11,7 @@ public class Constants {
     public static final String KEY_TESCOPLUS = "tesco";
     public static final String KEY_CREATED = "created";
     public static final String EXTRA_DOC_ID = "document_id";
-    public static final String EXTRA_IAN_ID = "document_ian";
+    
 
 
 

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+
+//    private View headerView;
+//    private ListView lvItensShoppingList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void showAddDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.shoplist_dialog, null, false);
@@ -65,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Main Add item");
         
         final TextView itemEditText = view.findViewById(R.id.dialog_item_edittext);
-       final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
+        final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);

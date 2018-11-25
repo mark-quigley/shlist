@@ -10,4 +10,6 @@
     <string name="aldi">Aldi</string>
     <string name="lidl">Lidl</string>
     <string name="dunnes_stores">DS</string>
+    <string name="description_title">Item description</string>
+    <string name="unit_value_title">Price</string>
 </resources>

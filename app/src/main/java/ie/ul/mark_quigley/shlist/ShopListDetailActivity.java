@@ -27,6 +27,7 @@ public class ShopListDetailActivity extends AppCompatActivity {
     private DocumentReference mDocRef;
     private DocumentSnapshot mDocSnapshot;
     private TextView mItemTextView;
+    private TextView mQuantityTextView;
     private TextView mAldiTextView;
     private TextView mLidlTextView;
     private TextView mDunnesTextView;
@@ -38,6 +39,7 @@ public class ShopListDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mItemTextView = findViewById(R.id.detail_item);
+        mQuantityTextView = findViewById(R.id.detail_quantity);
         mAldiTextView = findViewById(R.id.detail_aldi_price);
         mLidlTextView = findViewById(R.id.detail_lidl_price);
         mDunnesTextView = findViewById(R.id.detail_dunnes_price);
@@ -57,6 +59,7 @@ public class ShopListDetailActivity extends AppCompatActivity {
                 if (documentSnapshot.exists()) {
                     mDocSnapshot = documentSnapshot;
                     mItemTextView.setText((String)documentSnapshot.get(Constants.KEY_ITEM));
+                    mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
                     mAldiTextView.setText((String)documentSnapshot.get(Constants.KEY_ALDI));
                     mLidlTextView.setText((String)documentSnapshot.get(Constants.KEY_LIDL));
                     mDunnesTextView.setText((String)documentSnapshot.get(Constants.KEY_DUNNES));
@@ -81,10 +84,12 @@ public class ShopListDetailActivity extends AppCompatActivity {
         builder.setView(view);
         builder.setTitle("Edit this item");
         final TextView itemEditText = view.findViewById(R.id.dialog_item_edittext);
+        final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
         itemEditText.setText((String)mDocSnapshot.get(Constants.KEY_ITEM));
+        quantityEditText.setText((String)mDocSnapshot.get(Constants.KEY_QUANTITY));
         aldiEditText.setText((String)mDocSnapshot.get(Constants.KEY_ALDI));
         lidlEditText.setText((String)mDocSnapshot.get(Constants.KEY_LIDL));
         dunnesEditText.setText((String)mDocSnapshot.get(Constants.KEY_DUNNES));
@@ -93,6 +98,7 @@ public class ShopListDetailActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialogInterface, int i) {
                 Map<String, Object> sl = new HashMap<>();
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
+                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
                 sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
                 sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());

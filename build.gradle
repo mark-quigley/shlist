@@ -18,6 +18,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        'https://dl.google.com/dl/android/maven2/'
         jcenter()
     }
 }

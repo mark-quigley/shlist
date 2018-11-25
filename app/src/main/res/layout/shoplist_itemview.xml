@@ -27,7 +27,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/itemquantity_item"
+            android:id="@+id/itemview_quantity"
             android:layout_toRightOf="@id/itemview_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/itemview_aldi"
-            android:layout_toRightOf="@id/itemquantity_item"
+            android:layout_toRightOf="@id/itemview_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"

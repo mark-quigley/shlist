@@ -53,12 +53,14 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
     public void onBindViewHolder(@NonNull ShopListViewHolder shopListViewHolder, int i) {
         DocumentSnapshot ds = mShopListSnapshots.get(i);
         String item = (String)ds.get(Constants.KEY_ITEM);
+        String quantity = (String)ds.get(Constants.KEY_QUANTITY);
         String aldi = (String)ds.get(Constants.KEY_ALDI);
         String lidl = (String)ds.get(Constants.KEY_LIDL);
         String dunnes = (String)ds.get(Constants.KEY_DUNNES);
 
 
         shopListViewHolder.mItemTextView.setText(item);
+        shopListViewHolder.mQtyTestView.setText(quantity);
         shopListViewHolder.mAldiTextView.setText(aldi);
         shopListViewHolder.mLidlTextView.setText(lidl);
         shopListViewHolder.mDunnesTextView.setText(dunnes);
@@ -73,6 +75,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
 
     class ShopListViewHolder extends RecyclerView.ViewHolder {
         private TextView mItemTextView;
+        private TextView mQtyTestView;
         private TextView mAldiTextView;
         private TextView mLidlTextView;
         private TextView mDunnesTextView;
@@ -81,6 +84,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
             super(itemView);
             //mItemTextView = itemView.findViewById(R.id.itemview_quote);
             mItemTextView = itemView.findViewById(R.id.itemview_item);
+            mQtyTestView = itemView.findViewById(R.id.itemquantity_item);
             mAldiTextView = itemView.findViewById(R.id.itemview_aldi);
             mLidlTextView = itemView.findViewById(R.id.itemview_lidl);
             mDunnesTextView = itemView.findViewById(R.id.itemview_dunnes);

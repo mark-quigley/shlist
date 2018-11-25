@@ -8,7 +8,7 @@ public class Constants {
     public static final String KEY_ALDI = "aldi";
     public static final String KEY_LIDL = "lidl";
     public static final String KEY_DUNNES = "dunnes";
-    public static final String KEY_TESCO = "tesco";
+    public static final String KEY_TESCOPLUS = "tesco";
     public static final String KEY_CREATED = "created";
     public static final String EXTRA_DOC_ID = "document_id";
     public static final String EXTRA_IAN_ID = "document_ian";

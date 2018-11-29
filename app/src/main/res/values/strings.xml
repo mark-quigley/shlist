@@ -12,4 +12,5 @@
     <string name="dunnes_stores">DS</string>
     <string name="description_title">Item description</string>
     <string name="unit_value_title">Price</string>
+    <string name="title_activity_aldi_list_detail">AldiListDetailActivity</string>
 </resources>

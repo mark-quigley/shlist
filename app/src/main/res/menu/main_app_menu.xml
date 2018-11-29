@@ -4,12 +4,8 @@
 
     <item
         android:id="@+id/action_add"
-<<<<<<< HEAD
         android:icon="@android:drawable/ic_menu_add"
         android:iconTint="@color/white_heavy"
-=======
-        android:icon="@drawable/ic_action_new"
->>>>>>> parent of df6ede9... add button on toolbar
         android:title="@string/new_item"
         app:showAsAction="ifRoom"/>
 </menu>

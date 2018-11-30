@@ -55,7 +55,7 @@
                 android:textAlignment="gravity"
                 android:layout_gravity="left"
                 android:maxLength="5"
-                android:paddingLeft="5dp"
+                android:paddingLeft="10dp"
                 android:paddingRight="5dp"
                 android:text="aldi"
                 android:textColor="@android:color/black"

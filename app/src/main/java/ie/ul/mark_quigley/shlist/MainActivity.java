@@ -137,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
     public void aldiListDetailActivity () {
         Intent intent = new Intent(this, AldiListDetailActivity.class);
         startActivity(intent);
+
+
     }
 
 

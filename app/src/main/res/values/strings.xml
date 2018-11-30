@@ -14,5 +14,5 @@
     <string name="description_title">Item description</string>
     <string name="unit_value_title">Price</string>
     <string name="go">GO</string>
-    <string name="title_activity_aldi_list_detail">AldiListDetailActivity</string>
+    <string name="title_activity_aldi_list_detail">Aldi Detail</string>
 </resources>

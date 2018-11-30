@@ -1,70 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-
-
-
     tools:showIn="@layout/activity_main">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:paddingTop="50dp" />
 
+    <LinearLayout
+        android:id="@+id/title_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-
-        >
 
         <TextView
             android:id="@+id/item_main"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="3.5"
             android:paddingLeft="5dp"
-            android:paddingRight="60dp"
-            android:text="Item"
-             />
+            android:text="Item" />
 
         <TextView
             android:id="@+id/qty_main"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingRight="60dp"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
             android:text="Qty"
-            android:layout_toRightOf="@id/item_main"/>
+            android:layout_weight="0.5"/>
 
         <ImageView
             android:id="@+id/aldi_main"
             android:layout_width="40dp"
             android:layout_height="40dp"
 
-            android:paddingRight="10dp"
+            android:paddingRight="5dp"
             android:src="@drawable/aldi"
-            android:layout_toRightOf="@id/qty_main"/>
+            android:layout_weight="0.5"/>
 
 
         <ImageView
             android:id="@+id/lidi_main"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:paddingRight="10dp"
+            android:paddingRight="5dp"
 
             android:src="@drawable/lidl"
-            android:layout_toRightOf="@id/aldi_main"/>
+            android:layout_weight="0.5"/>
 
         <ImageView
             android:id="@+id/dunne_main"
             android:layout_width="40dp"
             android:layout_height="40dp"
-
-            android:paddingRight="10dp"
+            android:paddingLeft="5dp"
             android:src="@drawable/dunnes"
-            android:layout_toRightOf="@id/lidi_main"/>
+            android:layout_weight="0.5"/>
 
         <!--android:id="@+id/aldi_main"-->
         <!--android:layout_width="wrap_content"-->
@@ -87,15 +89,11 @@
             <!--android:text="DS"-->
             <!--android:paddingRight="20dp"/>-->
 
-    </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="50dp"
-         />
+    </LinearLayout>
 
 
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
+
+

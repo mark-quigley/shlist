@@ -18,17 +18,6 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
-                                      <entry key="image">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="trimmed" value="true" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
                                       <entry key="text">
                                         <value>
                                           <PersistentState>
@@ -57,10 +46,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\ulgit\shlist\shlist\app\src\main\res\drawable\ic_action_new.png" />
+                                      <entry key="assetType" value="TEXT" />
                                       <entry key="outputName" value="ic_action_new" />
-                                      <entry key="theme" value="HOLO_DARK" />
                                     </map>
                                   </option>
                                 </PersistentState>

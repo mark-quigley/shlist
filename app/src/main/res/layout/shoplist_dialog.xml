@@ -24,13 +24,12 @@
             android:hint="@string/hint_desc"
             android:imeOptions="actionNext"
             android:inputType="textCapSentences"
-
-
             android:singleLine="true"
             android:textStyle="normal"
-            tools:targetApi="jelly_bean_mr1"
+
 
             />
+        <!--tools:targetApi="jelly_bean_mr1"-->
 
         <EditText
             android:id="@+id/dialog_quantity_edittext"
@@ -56,9 +55,7 @@
             android:imeOptions="actionNext"
             android:inputType="numberDecimal|number"
             android:maxLength="5"
-            android:singleLine="true"
-
-            />
+            android:singleLine="true"/>
 
 
         <EditText
@@ -88,9 +85,7 @@
 
             android:inputType="numberDecimal|number"
             android:maxLength="5"
-            android:singleLine="true"
-
-            />
+            android:singleLine="true" />
 
 
 

@@ -68,6 +68,15 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
 
     }
 
+    public double cheapestPrice(double aldiPrice, double lidlPrice, double dunnesPrice){
+        double min = aldiPrice;
+        if (lidlPrice < aldiPrice && lidlPrice < dunnesPrice)
+            min = lidlPrice;
+        if (dunnesPrice < aldiPrice && dunnesPrice < lidlPrice)
+            min = dunnesPrice;
+        return min;
+    }
+
     @Override
     public int getItemCount() {
         return mShopListSnapshots.size();

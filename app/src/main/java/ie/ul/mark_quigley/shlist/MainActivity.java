@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 //                sl.put(Constants.KEY_LIDL, lidiPrice);
 //                sl.put(Constants.KEY_DUNNES, dunnesPrice);
 //                sl.put(Constants.KEY_CREATED, new Date());
-//                //s1.put(Constants.KEY_TEST_PRICE, aldiPrice);
+//                s1.put(Constants.KEY_TEST_PRICE, aldiPrice);
 
 
 //              sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());

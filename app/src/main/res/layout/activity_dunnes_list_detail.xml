@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="5dp"
-    tools:context=".AldiListDetailActivity">
+    tools:context=".DunnesListDetailActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -23,8 +23,7 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <include layout="@layout/content_aldi_list_detail" />
-
+    <include layout="@layout/content_dunnes_list_detail" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -33,22 +32,8 @@
         android:layout_margin="@dimen/fab_margin"
         android:scaleType="center"
         android:clickable="true"
-        app:srcCompat="@drawable/lidl"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
         android:layout_width="wrap_content" />
 
 
 </android.support.design.widget.CoordinatorLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

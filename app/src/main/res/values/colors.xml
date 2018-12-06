@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#001b85</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#006400</color>
+    <color name="colorAccent">#FFFFFF</color>
 
     //new file
     <color name="black_royal">#262732</color>

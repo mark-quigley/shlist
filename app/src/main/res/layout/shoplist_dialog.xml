@@ -3,37 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/customViewStyles"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:orientation="horizontal"
-
     android:shrinkColumns="*"
     android:stretchColumns="*">
 
-    <!--style="@style/customViewStyles"-->
+
     <TableRow android:layout_marginBottom="5dp">
 
         <EditText
             android:id="@+id/dialog_item_edittext"
-            style="@style/matchMatch"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@color/black_brake"
             android:completionThreshold="1"
-            android:hint="@string/hint_desc"
+            android:hint="@string/new_item"
             android:imeOptions="actionNext"
             android:inputType="textCapSentences"
             android:singleLine="true"
             android:textStyle="normal"
-
-
             />
-        <!--tools:targetApi="jelly_bean_mr1"-->
+
 
         <EditText
             android:id="@+id/dialog_quantity_edittext"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@color/black_brake"
@@ -46,7 +43,8 @@
 
         <EditText
             android:id="@+id/dialog_aldi_edittext"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.75"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@color/black_brake"
@@ -60,7 +58,8 @@
 
         <EditText
             android:id="@+id/dialog_lidl_edittext"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.75"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@color/black_brake"
@@ -74,7 +73,8 @@
 
         <EditText
             android:id="@+id/dialog_dunnes_edittext"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.75"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
 

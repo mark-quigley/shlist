@@ -22,14 +22,23 @@
             android:name=".ShopListDetailActivity"
             android:label="@string/title_activity_shop_list_detail"
             android:theme="@style/AppTheme.NoActionBar">
-
         </activity>
-
         <activity
             android:name=".AldiListDetailActivity"
             android:label="@string/title_activity_aldi_list_detail"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+       <activity
+           android:name=".LidlListDetailActivity"
+           android:label="@string/title_activity_lidl_list_detail"
+           android:theme="@style/AppTheme.NoActionBar">
+       </activity>
+       <activity
+           android:name=".DunnesListDetailActivity"
+           android:label="@string/title_activity_dunnes_list_detail"
+           android:theme="@style/AppTheme.NoActionBar">
+       </activity>
     </application>
-
+    <!--android:theme="@style/AppTheme.NoActionBar">-->
+    <!--android:theme="@style/AppTheme.SlidrActivityTheme"-->
 </manifest>

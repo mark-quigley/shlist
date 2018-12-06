@@ -39,9 +39,6 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private View headerView;
-//    private ListView lvItensShoppingList;
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_app_menu, menu);
@@ -81,17 +78,22 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                aldiListDetailActivity();
+                aldi();
             }
         });
     }
 
+    public void aldi () {
+        Intent intent = new Intent(this, AldiListDetailActivity.class);
+        startActivity(intent);
+    }
 
 
     private void showAddDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.shoplist_dialog, null, false);
         builder.setView(view);
+
         // Opening window in the app
         builder.setTitle("Main Add item");
         
@@ -134,12 +136,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void aldiListDetailActivity () {
-        Intent intent = new Intent(this, AldiListDetailActivity.class);
-        startActivity(intent);
 
-
-    }
 
 
 

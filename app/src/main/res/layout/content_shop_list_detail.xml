@@ -11,7 +11,7 @@
     tools:context=".ShopListDetailActivity"
     tools:showIn="@layout/activity_shop_list_detail">
 
-
+    <!--Edit Screen-->
 
     <TextView
         android:id="@+id/item_label"
@@ -27,9 +27,6 @@
         android:gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
-    <!--android:layout_margin="20dp"-->
-
 
     <TextView
         android:paddingTop="10dp"

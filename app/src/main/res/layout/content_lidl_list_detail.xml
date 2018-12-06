@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".LidlListDetailActivity"
+    tools:showIn="@layout/activity_lidl_list_detail">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -45,37 +45,15 @@
             android:layout_weight="0.5"/>
 
         <ImageView
-            android:id="@+id/aldi_main"
+            android:id="@+id/lidi_main"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="left"
             android:paddingRight="5dp"
-            android:src="@drawable/aldi"
-            android:layout_weight="0.5"/>
-
-
-        <ImageView
-            android:id="@+id/lidi_main"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingRight="5dp"
             android:src="@drawable/lidl"
             android:layout_weight="0.5"/>
-
-        <ImageView
-            android:id="@+id/dunne_main"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingLeft="5dp"
-            android:src="@drawable/dunnes"
-            android:layout_weight="0.5"/>
-
-
 
     </LinearLayout>
 
 
-
 </RelativeLayout>
-
-

@@ -2,7 +2,6 @@ package ie.ul.mark_quigley.shlist;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,19 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.r0adkll.slidr.Slidr;
-import com.r0adkll.slidr.model.SlidrInterface;
 
-public class AldiListDetailActivity extends AppCompatActivity {
-
-
+public class LidlListDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aldi_list_detail);
-
-
+        setContentView(R.layout.activity_lidl_list_detail);
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -32,27 +25,27 @@ public class AldiListDetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        ShopListAdapter shopListAdapter = new ShopListAdapter( );
+        ShopListAdapter shopListAdapter = new ShopListAdapter();
         recyclerView.setAdapter(shopListAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lidl();
+                dunnes();
             }
         });
     }
 
-    public void lidl() {
-        Intent intent = new Intent(this, LidlListDetailActivity.class);
+public void dunnes() {
+        Intent intent = new Intent(this, DunnesListDetailActivity.class);
         startActivity(intent);
 
-    }
+        }
 
-    @Override
-    public void finish() {
+@Override
+public void finish() {
         super.finish();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-    }
+        }
 }

@@ -39,6 +39,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_app_menu, menu);
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
-//        final double aldiPrice = Double.parseDouble(String.valueOf(aldiEditText));
+//        final double aldiPrice = Double.parseDouble();
 //        final double lidiPrice = Double.parseDouble(String.valueOf(lidlEditText));// need to do this for all doubles.
 //        final double dunnesPrice = Double.parseDouble(String.valueOf(dunnesEditText));
 //        final int quantity = Integer.parseInt(String.valueOf(quantityEditText));

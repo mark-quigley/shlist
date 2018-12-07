@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "403809005845-agdj7raonpgjsv1bt0uq61u4vf3mpfga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ie.ul.mark_quigley.shlist",
+            "certificate_hash": "4b4381955c71d863fccaac3d69b9708c9adaf784"
+          }
+        },
+        {
           "client_id": "403809005845-79mlva8n3pvbrqac295um2kbltdpuog8.apps.googleusercontent.com",
           "client_type": 3
         }

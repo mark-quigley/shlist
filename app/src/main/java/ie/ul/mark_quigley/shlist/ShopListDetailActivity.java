@@ -24,6 +24,11 @@ import java.util.Map;
 
 public class ShopListDetailActivity extends AppCompatActivity {
 
+    private double mAldiPrice;
+    private double mLidiPrice;
+    private double mDunnesPrice;
+    private double mQuantity;
+
     private DocumentReference mDocRef;
     private DocumentSnapshot mDocSnapshot;
     private TextView mItemTextView;
@@ -59,10 +64,14 @@ public class ShopListDetailActivity extends AppCompatActivity {
                 if (documentSnapshot.exists()) {
                     mDocSnapshot = documentSnapshot;
                     mItemTextView.setText((String)documentSnapshot.get(Constants.KEY_ITEM));
-                    mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
+
+                    //mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
                     mAldiTextView.setText((String)documentSnapshot.get(Constants.KEY_ALDI));
+                    //mAldiTextView.setText(Double.toString(documentSnapshot.get(Constants.KEY_ALDI)));
                     mLidlTextView.setText((String)documentSnapshot.get(Constants.KEY_LIDL));
                     mDunnesTextView.setText((String)documentSnapshot.get(Constants.KEY_DUNNES));
+                    mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
+
                 }
 
             }
@@ -88,6 +97,7 @@ public class ShopListDetailActivity extends AppCompatActivity {
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
+
         itemEditText.setText((String)mDocSnapshot.get(Constants.KEY_ITEM));
         quantityEditText.setText((String)mDocSnapshot.get(Constants.KEY_QUANTITY));
         aldiEditText.setText((String)mDocSnapshot.get(Constants.KEY_ALDI));
@@ -96,12 +106,21 @@ public class ShopListDetailActivity extends AppCompatActivity {
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                mQuantity = Double.parseDouble(quantityEditText.getText().toString());
+                mAldiPrice = Double.parseDouble(aldiEditText.getText().toString());
+                mLidiPrice = Double.parseDouble(lidlEditText.getText().toString());
+                mDunnesPrice = Double.parseDouble(dunnesEditText.getText().toString());
+
                 Map<String, Object> sl = new HashMap<>();
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
-                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
-                sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
-                sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
-                sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());
+                sl.put(Constants.KEY_QUANTITY, mQuantity);
+                sl.put(Constants.KEY_ALDI, mAldiPrice);
+                sl.put(Constants.KEY_LIDL, mLidiPrice);
+                sl.put(Constants.KEY_DUNNES, mDunnesPrice);
+//                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
+//                sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
+//                sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
+//                sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());
                 sl.put(Constants.KEY_CREATED, new Date());
                 mDocRef.update(sl);
             }

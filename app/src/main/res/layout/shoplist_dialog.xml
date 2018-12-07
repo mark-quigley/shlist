@@ -38,7 +38,7 @@
             android:hint="@string/quantity_title"
             android:imeOptions="actionNext"
             android:inputType="numberDecimal|number"
-            android:maxLength="2"
+            android:maxLength="3"
             android:singleLine="true" />
 
         <EditText

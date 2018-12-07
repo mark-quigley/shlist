@@ -39,6 +39,10 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private double mAldiPrice;
+    private double mLidiPrice;
+    private double mDunnesPrice;
+    private double mQuantity;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,32 +107,34 @@ public class MainActivity extends AppCompatActivity {
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
-//        final double aldiPrice = Double.parseDouble();
-//        final double lidiPrice = Double.parseDouble(String.valueOf(lidlEditText));// need to do this for all doubles.
-//        final double dunnesPrice = Double.parseDouble(String.valueOf(dunnesEditText));
-//        final int quantity = Integer.parseInt(String.valueOf(quantityEditText));
+
+
+
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                mQuantity = Double.parseDouble(quantityEditText.getText().toString());
+                mAldiPrice = Double.parseDouble(aldiEditText.getText().toString());
+                mLidiPrice = Double.parseDouble(lidlEditText.getText().toString());
+                mDunnesPrice = Double.parseDouble(dunnesEditText.getText().toString());
+
+
                 Map<String, Object> sl = new HashMap<>();
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
-//                sl.put(Constants.KEY_QUANTITY, quantity);
-//                //sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());// put all prices into db as a double
-//                sl.put(Constants.KEY_ALDI, aldiPrice);
-//                sl.put(Constants.KEY_LIDL, lidiPrice);
-//                sl.put(Constants.KEY_DUNNES, dunnesPrice);
-//                sl.put(Constants.KEY_CREATED, new Date());
-//                //s1.put(Constants.KEY_TEST_PRICE, aldiPrice);
-
-
-//              sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
-                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
-                sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
-                sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
-                sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());
+                sl.put(Constants.KEY_QUANTITY, mQuantity);
+                sl.put(Constants.KEY_ALDI, mAldiPrice);
+                sl.put(Constants.KEY_LIDL, mLidiPrice);
+                sl.put(Constants.KEY_DUNNES, mDunnesPrice);
+//                sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
+//                sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
+//                sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
+//                sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
+//                sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());
                 sl.put(Constants.KEY_CREATED, new Date());
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(sl);
+
+
             }
         });
         builder.setNegativeButton(android.R.string.cancel, null);

@@ -23,6 +23,8 @@ import java.util.List;
 
 public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopListViewHolder>{
 
+
+
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public ShopListAdapter() {
@@ -53,29 +55,22 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
     public void onBindViewHolder(@NonNull ShopListViewHolder shopListViewHolder, int i) {
         DocumentSnapshot ds = mShopListSnapshots.get(i);
         String item = (String)ds.get(Constants.KEY_ITEM);
-        String quantity = (String)ds.get(Constants.KEY_QUANTITY);
-        String aldi = (String)ds.get(Constants.KEY_ALDI);
-        String lidl = (String)ds.get(Constants.KEY_LIDL);
-        String dunnes = (String)ds.get(Constants.KEY_DUNNES);
+        Double quantity = (Double)ds.get(Constants.KEY_QUANTITY);
+        Double aldi = (Double)ds.get(Constants.KEY_ALDI);
+        Double lidl = (Double)ds.get(Constants.KEY_LIDL);
+        Double dunnes = (Double)ds.get(Constants.KEY_DUNNES);
 
 
         shopListViewHolder.mItemTextView.setText(item);
-        shopListViewHolder.mQtyTestView.setText(quantity);
-        shopListViewHolder.mAldiTextView.setText(aldi);
-        shopListViewHolder.mLidlTextView.setText(lidl);
-        shopListViewHolder.mDunnesTextView.setText(dunnes);
+      //  shopListViewHolder.mQtyTestView.setText(Double.toString(quantity));
+        shopListViewHolder.mAldiTextView.setText(aldi.toString());
+        shopListViewHolder.mLidlTextView.setText(lidl.toString());
+        shopListViewHolder.mDunnesTextView.setText(dunnes.toString());
+        shopListViewHolder.mQtyTestView.setText(quantity.toString());
 
 
     }
 
-//    public double cheapestPrice(double aldiPrice, double lidlPrice, double dunnesPrice){
-//        double min = aldiPrice;
-//        if (lidlPrice < aldiPrice && lidlPrice < dunnesPrice)
-//            min = lidlPrice;
-//        if (dunnesPrice < aldiPrice && dunnesPrice < lidlPrice)
-//            min = dunnesPrice;
-//        return min;
-//    }
 
     @Override
     public int getItemCount() {

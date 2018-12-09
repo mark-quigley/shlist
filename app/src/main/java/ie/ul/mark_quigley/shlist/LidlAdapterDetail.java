@@ -22,13 +22,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AldiAdapterDetail extends AppCompatActivity {
+public class LidlAdapterDetail extends AppCompatActivity {
 
     private DocumentReference mDocRef;
     private DocumentSnapshot mDocSnapshot;
     private TextView mItemTextView;
     private TextView mQuantityTextView;
-    private TextView mAldiTextView;
+    private TextView mLidlTextView;
 
 
     @Override
@@ -39,7 +39,7 @@ public class AldiAdapterDetail extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mItemTextView = findViewById(R.id.detail_item);
         mQuantityTextView = findViewById(R.id.detail_quantity);
-        mAldiTextView = findViewById(R.id.detail_aldi_price);
+        mLidlTextView = findViewById(R.id.detail_lidl_price);
 
 
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
@@ -58,7 +58,7 @@ public class AldiAdapterDetail extends AppCompatActivity {
                     mDocSnapshot = documentSnapshot;
                     mItemTextView.setText((String)documentSnapshot.get(Constants.KEY_ITEM));
                     mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
-                    mAldiTextView.setText((String)documentSnapshot.get(Constants.KEY_ALDI));
+                    mLidlTextView.setText((String)documentSnapshot.get(Constants.KEY_LIDL));
                 }
 
             }
@@ -81,11 +81,11 @@ public class AldiAdapterDetail extends AppCompatActivity {
         builder.setTitle("Edit this item");
         final TextView itemEditText = view.findViewById(R.id.dialog_item_edittext);
         final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
-        final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
+        final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
 
         itemEditText.setText((String)mDocSnapshot.get(Constants.KEY_ITEM));
         quantityEditText.setText((String)mDocSnapshot.get(Constants.KEY_QUANTITY));
-        aldiEditText.setText((String)mDocSnapshot.get(Constants.KEY_ALDI));
+        lidlEditText.setText((String)mDocSnapshot.get(Constants.KEY_LIDL));
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
@@ -96,7 +96,7 @@ public class AldiAdapterDetail extends AppCompatActivity {
                 Map<String, Object> sl = new HashMap<>();
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
                 sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
-                sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
+                sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
 
                 sl.put(Constants.KEY_CREATED, new Date());
                 mDocRef.update(sl);
@@ -127,3 +127,4 @@ public class AldiAdapterDetail extends AppCompatActivity {
 
 
 }
+

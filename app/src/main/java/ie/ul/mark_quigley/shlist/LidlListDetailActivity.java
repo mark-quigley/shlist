@@ -25,8 +25,8 @@ public class LidlListDetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        ShopListAdapter shopListAdapter = new ShopListAdapter();
-        recyclerView.setAdapter(shopListAdapter);
+        LidlAdapter lidlAdapter = new LidlAdapter();
+        recyclerView.setAdapter(lidlAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

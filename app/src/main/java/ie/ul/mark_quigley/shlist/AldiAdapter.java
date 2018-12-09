@@ -26,7 +26,8 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public AldiAdapter() {
-        CollectionReference shoplistRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
+        CollectionReference shoplistRef = FirebaseFirestore.getInstance()
+                .collection(Constants.COLLECTION_PATH);
 
         shoplistRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -45,7 +46,8 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
     @NonNull
     @Override
     public ShopListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.aldi_itemview, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.aldi_itemview, parent, false);
         return new ShopListViewHolder(itemView);
     }
 
@@ -77,8 +79,6 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
 
         public ShopListViewHolder(@NonNull View itemView) {
             super(itemView);
-            //mItemTextView = itemView.findViewById(R.id.itemview_quote);
-//            should like like this
             mItemTextView = itemView.findViewById(R.id.itemview_item);
             mQtyTestView = itemView.findViewById(R.id.itemview_quantity);
             mAldiTextView = itemView.findViewById(R.id.itemview_aldi);

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="4dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+
+
+
+
+        <TextView
+            android:id="@+id/itemview_item"
+            android:layout_width="60dp"
+            android:textAlignment="gravity"
+            android:layout_gravity="left"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Item"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+
+            tools:maxWidth="@android:dimen/dialog_min_width_major" />
+
+        <TextView
+            android:id="@+id/itemview_quantity"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="gravity"
+            android:layout_gravity="left"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="qty"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:layout_weight="0.5"/>
+
+
+
+        <TextView
+            android:id="@+id/itemview_lidl"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="gravity"
+            android:layout_gravity="left"
+            android:maxLength="5"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="lidl"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:layout_weight="0.5"/>
+
+
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

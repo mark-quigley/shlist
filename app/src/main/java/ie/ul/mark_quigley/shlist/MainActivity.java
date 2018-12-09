@@ -103,26 +103,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
-//        final double aldiPrice = Double.parseDouble();
-//        final double lidiPrice = Double.parseDouble(String.valueOf(lidlEditText));// need to do this for all doubles.
-//        final double dunnesPrice = Double.parseDouble(String.valueOf(dunnesEditText));
-//        final int quantity = Integer.parseInt(String.valueOf(quantityEditText));
+
+//        final int quantity = Integer.parseInt(itemEditText.getText().toString();
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Map<String, Object> sl = new HashMap<>();
+
+
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
-//                sl.put(Constants.KEY_QUANTITY, quantity);
-//                //sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());// put all prices into db as a double
-//                sl.put(Constants.KEY_ALDI, aldiPrice);
-//                sl.put(Constants.KEY_LIDL, lidiPrice);
-//                sl.put(Constants.KEY_DUNNES, dunnesPrice);
-//                sl.put(Constants.KEY_CREATED, new Date());
-//                //s1.put(Constants.KEY_TEST_PRICE, aldiPrice);
-
-
-//              sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
                 sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
                 sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());

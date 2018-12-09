@@ -21,11 +21,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopListViewHolder>{
+public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHolder>{
 
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
-    public ShopListAdapter() {
+    public AldiAdapter() {
         CollectionReference shoplistRef = FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH);
 
         shoplistRef.orderBy(Constants.KEY_CREATED, Query.Direction.DESCENDING).limit(50)
@@ -45,7 +45,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
     @NonNull
     @Override
     public ShopListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.shoplist_itemview, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.aldi_itemview, parent, false);
         return new ShopListViewHolder(itemView);
     }
 
@@ -55,27 +55,14 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
         String item = (String)ds.get(Constants.KEY_ITEM);
         String quantity = (String)ds.get(Constants.KEY_QUANTITY);
         String aldi = (String)ds.get(Constants.KEY_ALDI);
-        String lidl = (String)ds.get(Constants.KEY_LIDL);
-        String dunnes = (String)ds.get(Constants.KEY_DUNNES);
 
 
         shopListViewHolder.mItemTextView.setText(item);
         shopListViewHolder.mQtyTestView.setText(quantity);
         shopListViewHolder.mAldiTextView.setText(aldi);
-        shopListViewHolder.mLidlTextView.setText(lidl);
-        shopListViewHolder.mDunnesTextView.setText(dunnes);
-
 
     }
 
-//    public double cheapestPrice(double aldiPrice, double lidlPrice, double dunnesPrice){
-//        double min = aldiPrice;
-//        if (lidlPrice < aldiPrice && lidlPrice < dunnesPrice)
-//            min = lidlPrice;
-//        if (dunnesPrice < aldiPrice && dunnesPrice < lidlPrice)
-//            min = dunnesPrice;
-//        return min;
-//    }
 
     @Override
     public int getItemCount() {
@@ -86,8 +73,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
         private TextView mItemTextView;
         private TextView mQtyTestView;
         private TextView mAldiTextView;
-        private TextView mLidlTextView;
-        private TextView mDunnesTextView;
+
 
         public ShopListViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -96,8 +82,7 @@ public class ShopListAdapter extends RecyclerView.Adapter<ShopListAdapter.ShopLi
             mItemTextView = itemView.findViewById(R.id.itemview_item);
             mQtyTestView = itemView.findViewById(R.id.itemview_quantity);
             mAldiTextView = itemView.findViewById(R.id.itemview_aldi);
-            mLidlTextView = itemView.findViewById(R.id.itemview_lidl);
-            mDunnesTextView = itemView.findViewById(R.id.itemview_dunnes);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

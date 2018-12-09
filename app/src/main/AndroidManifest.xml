@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShopListDetailActivity"
+            android:name=".AldiAdapterDetail"
             android:label="@string/title_activity_shop_list_detail"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

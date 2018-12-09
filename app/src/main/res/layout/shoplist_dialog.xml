@@ -93,51 +93,6 @@
 
     <RelativeLayout style="@style/matchMatch">
 
-        <!--<RelativeLayout-->
-        <!--android:id="@+id/footer_bar"-->
-        <!--style="@style/customFooterBarStyles"-->
-        <!--android:orientation="horizontal" >-->
-
-        <!--<TextView-->
-        <!--style="@style/totalFont"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_gravity="start"-->
-        <!--android:text="@string/total" />-->
-
-
-        <!--<TextView-->
-        <!--android:id="@+id/footer_total_quant"-->
-        <!--style="@style/totalFont"-->
-        <!--android:layout_marginEnd="15dp"-->
-        <!--android:layout_marginRight="15dp"-->
-        <!--android:layout_toStartOf="@+id/footer_total_sum"-->
-        <!--android:layout_toLeftOf="@+id/footer_total_sum"-->
-        <!--android:text="Things"-->
-        <!--android:layout_gravity="end" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/footer_total_sum"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--style="@style/totalFont"-->
-        <!--android:text="Cost"-->
-        <!--android:layout_gravity="end" />-->
-        <!--</RelativeLayout>-->
-
-        <!--<LinearLayout-->
-        <!--style="@style/matchWrap"-->
-        <!--android:layout_above="@id/footer_bar"-->
-        <!--android:animateLayoutChanges="true"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_marginBottom="5dp" >-->
-
-        <!--<ListView-->
-        <!--android:id="@+id/lvItemShoppingList"-->
-        <!--style="@style/customListViewStyles"-->
-        <!--android:background="@drawable/solid_white" >-->
-        <!--</ListView>-->
-        <!--</LinearLayout>-->
     </RelativeLayout>
 
 </TableLayout>

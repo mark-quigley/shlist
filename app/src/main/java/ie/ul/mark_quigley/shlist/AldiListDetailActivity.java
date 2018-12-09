@@ -23,7 +23,6 @@ public class AldiListDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aldi_list_detail);
 
 
-
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,8 +31,8 @@ public class AldiListDetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        ShopListAdapter shopListAdapter = new ShopListAdapter( );
-        recyclerView.setAdapter(shopListAdapter);
+        AldiAdapter AldiAdapter = new AldiAdapter( );
+        recyclerView.setAdapter(AldiAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

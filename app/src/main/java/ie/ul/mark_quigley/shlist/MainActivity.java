@@ -104,14 +104,16 @@ public class MainActivity extends AppCompatActivity {
         final TextView lidlEditText = view.findViewById(R.id.dialog_lidl_edittext);
         final TextView dunnesEditText = view.findViewById(R.id.dialog_dunnes_edittext);
 
-//        final int quantity = Integer.parseInt(itemEditText.getText().toString();
+//        final int quantity = Integer.parseInt(quantityEditText.getText().toString();
+//        final double aldiPrice = Double.parseDouble(aldiEditText.getText().toString());
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+
+
                 Map<String, Object> sl = new HashMap<>();
-
-
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
                 sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());

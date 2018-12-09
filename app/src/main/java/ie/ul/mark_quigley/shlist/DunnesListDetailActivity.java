@@ -24,8 +24,8 @@ public class DunnesListDetailActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
 
-            ShopListAdapter shopListAdapter = new ShopListAdapter();
-            recyclerView.setAdapter(shopListAdapter);
+            DunnesAdapter dunnesAdapter = new DunnesAdapter();
+            recyclerView.setAdapter(dunnesAdapter);
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {

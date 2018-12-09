@@ -34,7 +34,7 @@ public class AldiAdapterDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_list_detail);
+        setContentView(R.layout.activity_aldi_list_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mItemTextView = findViewById(R.id.detail_item);
@@ -97,7 +97,6 @@ public class AldiAdapterDetail extends AppCompatActivity {
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
                 sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_ALDI, aldiEditText.getText().toString());
-
                 sl.put(Constants.KEY_CREATED, new Date());
                 mDocRef.update(sl);
             }

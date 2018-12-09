@@ -54,20 +54,20 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
     @Override
     public void onBindViewHolder(@NonNull ShopListViewHolder shopListViewHolder, int i) {
         DocumentSnapshot ds = mShopListSnapshots.get(i);
-        String item = (String)ds.get(Constants.KEY_ITEM);
-        String quantity = (String)ds.get(Constants.KEY_QUANTITY);
-        String aldi = (String)ds.get(Constants.KEY_ALDI);
-        String lidl = (String)ds.get(Constants.KEY_LIDL);
-        String dunnes = (String)ds.get(Constants.KEY_DUNNES);
+        String item = (String) ds.get(Constants.KEY_ITEM);
+        String quantity = (String) ds.get(Constants.KEY_QUANTITY);
+        String aldi = (String) ds.get(Constants.KEY_ALDI);
+        String lidl = (String) ds.get(Constants.KEY_LIDL);
+        String dunnes = (String) ds.get(Constants.KEY_DUNNES);
 
         double x;
         double aldiPrice = 0.0;
         double lidlPrice = 0.0;
         double dunnesPrice = 0.0;
 //        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
-        aldiPrice = Double.parseDouble(aldi.toString());
-        lidlPrice = Double.parseDouble(lidl.toString());
-        dunnesPrice = Double.parseDouble(dunnes.toString());
+        aldiPrice = Double.parseDouble(aldi.toString( ));
+        lidlPrice = Double.parseDouble(lidl.toString( ));
+        dunnesPrice = Double.parseDouble(dunnes.toString( ));
 
         x = Math.min(Math.min(aldiPrice, lidlPrice), dunnesPrice);
 
@@ -75,6 +75,10 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
             shopListViewHolder.mItemTextView.setText(item);
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mLidlTextView.setText(lidl);
+        } else {
+            shopListViewHolder.mItemTextView.setHeight(0);
+            shopListViewHolder.mQtyTestView.setHeight(0);
+            shopListViewHolder.mLidlTextView.setHeight(0);
         }
     }
 

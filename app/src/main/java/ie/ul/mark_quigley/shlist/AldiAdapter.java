@@ -76,9 +76,13 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
         shopListViewHolder.mItemTextView.setText(item);
         shopListViewHolder.mQtyTestView.setText(quantity);
         shopListViewHolder.mAldiTextView.setText(aldi);
+        }else {
+            shopListViewHolder.mItemTextView.setHeight(0);
+            shopListViewHolder.mQtyTestView.setHeight(0);
+            shopListViewHolder.mAldiTextView.setHeight(0);
         }
-    }
 
+    }
 
     @Override
     public int getItemCount() {
@@ -93,16 +97,14 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
 
         public ShopListViewHolder(@NonNull View itemView) {
             super(itemView);
-            mItemTextView = itemView.findViewById(R.id.itemview_item);
-            mQtyTestView = itemView.findViewById(R.id.itemview_quantity);
-            mAldiTextView = itemView.findViewById(R.id.itemview_aldi);
-
+            mItemTextView = itemView.findViewById(R.id.itemview_item_aldi);
+            mQtyTestView = itemView.findViewById(R.id.itemview_quantity_aldi);
+            mAldiTextView = itemView.findViewById(R.id.itemview_aldi_aldi);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     DocumentSnapshot ds = mShopListSnapshots.get(getAdapterPosition());
-
                     Context c = view.getContext();
                     Intent intent = new Intent(c, AldiAdapterDetail.class);
                     intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());

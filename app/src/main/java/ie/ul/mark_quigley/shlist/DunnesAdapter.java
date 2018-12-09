@@ -64,6 +64,7 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
         double aldiPrice = 0.0;
         double lidlPrice = 0.0;
         double dunnesPrice = 0.0;
+
 //        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
         aldiPrice = Double.parseDouble(aldi.toString());
         lidlPrice = Double.parseDouble(lidl.toString());
@@ -75,6 +76,10 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
             shopListViewHolder.mItemTextView.setText(item);
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mDunnesTextView.setText(aldi);
+        }else {
+            shopListViewHolder.mItemTextView.setHeight(0);
+            shopListViewHolder.mQtyTestView.setHeight(0);
+            shopListViewHolder.mDunnesTextView.setHeight(0);
         }
 
     }

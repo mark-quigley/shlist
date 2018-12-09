@@ -56,12 +56,26 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
         DocumentSnapshot ds = mShopListSnapshots.get(i);
         String item = (String)ds.get(Constants.KEY_ITEM);
         String quantity = (String)ds.get(Constants.KEY_QUANTITY);
+        String aldi = (String)ds.get(Constants.KEY_ALDI);
+        String lidl = (String)ds.get(Constants.KEY_LIDL);
         String dunnes = (String)ds.get(Constants.KEY_DUNNES);
 
+        double x;
+        double aldiPrice = 0.0;
+        double lidlPrice = 0.0;
+        double dunnesPrice = 0.0;
+//        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
+        aldiPrice = Double.parseDouble(aldi.toString());
+        lidlPrice = Double.parseDouble(lidl.toString());
+        dunnesPrice = Double.parseDouble(dunnes.toString());
 
-        shopListViewHolder.mItemTextView.setText(item);
-        shopListViewHolder.mQtyTestView.setText(quantity);
-        shopListViewHolder.mDunnesTextView.setText(dunnes);
+        x = Math.min(Math.min(aldiPrice, lidlPrice), dunnesPrice);
+
+        if (x == dunnesPrice) {
+            shopListViewHolder.mItemTextView.setText(item);
+            shopListViewHolder.mQtyTestView.setText(quantity);
+            shopListViewHolder.mDunnesTextView.setText(aldi);
+        }
 
     }
 

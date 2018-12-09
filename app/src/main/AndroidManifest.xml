@@ -53,7 +53,7 @@
            android:label="@string/title_activity_dunnes_list_detail"
            android:theme="@style/AppTheme.NoActionBar">
        </activity>
-      
+
     </application>
     <!--android:theme="@style/AppTheme.NoActionBar">-->
     <!--android:theme="@style/AppTheme.SlidrActivityTheme"-->

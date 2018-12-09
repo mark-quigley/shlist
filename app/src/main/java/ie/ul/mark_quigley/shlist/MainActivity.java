@@ -121,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
                 sl.put(Constants.KEY_DUNNES, dunnesEditText.getText().toString());
                 sl.put(Constants.KEY_CREATED, new Date());
                 FirebaseFirestore.getInstance().collection(Constants.COLLECTION_PATH).add(sl);
+
+
             }
         });
         builder.setNegativeButton(android.R.string.cancel, null);

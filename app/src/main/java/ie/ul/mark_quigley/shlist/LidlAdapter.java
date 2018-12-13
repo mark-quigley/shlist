@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -76,9 +77,7 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mLidlTextView.setText(lidl);
         } else {
-            shopListViewHolder.mItemTextView.setHeight(0);
-            shopListViewHolder.mQtyTestView.setHeight(0);
-            shopListViewHolder.mLidlTextView.setHeight(0);
+            shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }
     }
 

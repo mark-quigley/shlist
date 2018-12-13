@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -77,9 +78,7 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mDunnesTextView.setText(aldi);
         }else {
-            shopListViewHolder.mItemTextView.setHeight(0);
-            shopListViewHolder.mQtyTestView.setHeight(0);
-            shopListViewHolder.mDunnesTextView.setHeight(0);
+            shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }
 
     }

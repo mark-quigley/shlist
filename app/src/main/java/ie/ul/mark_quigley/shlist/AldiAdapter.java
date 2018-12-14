@@ -25,6 +25,7 @@ import java.util.List;
 
 public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHolder>{
 
+    private double mAldiTotalCost = 0.0;
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public AldiAdapter() {
@@ -67,7 +68,9 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
         double aldiPrice = 0.0;
         double lidlPrice = 0.0;
         double dunnesPrice = 0.0;
-//        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
+        int aldiqty = 0;
+
+        aldiqty = Integer.parseInt(quantity.toString());
         aldiPrice = Double.parseDouble(aldi.toString());
         lidlPrice = Double.parseDouble(lidl.toString());
         dunnesPrice = Double.parseDouble(dunnes.toString());
@@ -79,6 +82,9 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
                 shopListViewHolder.mItemTextView.setText(item);
                 shopListViewHolder.mQtyTestView.setText(quantity);
                 shopListViewHolder.mAldiTextView.setText(aldi);
+
+             mAldiTotalCost += (aldiqty * x );
+
             }
         }else{
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));

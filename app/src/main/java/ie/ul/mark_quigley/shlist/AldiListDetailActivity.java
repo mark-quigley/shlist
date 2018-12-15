@@ -43,8 +43,8 @@ public class AldiListDetailActivity extends AppCompatActivity {
             }
         });
 
-//        TextView aldiTotalCost = (TextView) findViewById(R.id.footer_total_sum);
-//        aldiTotalCost.setText(AldiAdapter.funds.getFundAmount());
+        TextView aldiTotalCost = (TextView) findViewById(R.id.footer_total_sum);
+        aldiTotalCost.setText(AldiAdapter.funds.getFundAmount());
     }
 
     public void lidl() {

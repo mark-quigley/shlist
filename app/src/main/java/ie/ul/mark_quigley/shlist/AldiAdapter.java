@@ -91,8 +91,7 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
 
     @Override
     public int getItemCount() {
-        return mShopListSnapshots.size();
-    }
+        return mShopListSnapshots.size(); }
 
     class ShopListViewHolder extends RecyclerView.ViewHolder {
         private TextView mItemTextView;
@@ -106,14 +105,36 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
             mQtyTestView = itemView.findViewById(R.id.itemview_quantity_aldi);
             mAldiTextView = itemView.findViewById(R.id.itemview_aldi_aldi);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     DocumentSnapshot ds = mShopListSnapshots.get(getAdapterPosition());
+
                     Context c = view.getContext();
                     Intent intent = new Intent(c, AldiAdapterDetail.class);
                     intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());
                     c.startActivity(intent);
+//    class ShopListViewHolder extends RecyclerView.ViewHolder {
+//        private TextView mItemTextView;
+//        private TextView mQtyTestView;
+//        private TextView mAldiTextView;
+//
+//
+//        public ShopListViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//            mItemTextView = itemView.findViewById(R.id.itemview_item_aldi);
+//            mQtyTestView = itemView.findViewById(R.id.itemview_quantity_aldi);
+//            mAldiTextView = itemView.findViewById(R.id.itemview_aldi_aldi);
+//
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    DocumentSnapshot ds = mShopListSnapshots.get(getAdapterPosition());
+//                    Context c = view.getContext();
+//                    Intent intent = new Intent(c, AldiAdapterDetail.class);
+//                    intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());
+//                    c.startActivity(intent);
                 }
             });
         }

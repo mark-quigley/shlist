@@ -83,6 +83,7 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
         } else {
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }
+        
     }
 
 

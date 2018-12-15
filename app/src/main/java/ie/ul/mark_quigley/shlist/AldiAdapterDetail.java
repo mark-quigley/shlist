@@ -60,7 +60,6 @@ public class AldiAdapterDetail extends AppCompatActivity {
                     mQuantityTextView.setText((String)documentSnapshot.get(Constants.KEY_QUANTITY));
                     mAldiTextView.setText((String)documentSnapshot.get(Constants.KEY_ALDI));
                 }
-
             }
         });
 
@@ -73,6 +72,8 @@ public class AldiAdapterDetail extends AppCompatActivity {
             }
         });
     }
+
+
 
     private void showEditDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

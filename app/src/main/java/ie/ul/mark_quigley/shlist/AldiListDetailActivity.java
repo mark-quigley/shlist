@@ -41,6 +41,9 @@ public class AldiListDetailActivity extends AppCompatActivity {
                 lidl();
             }
         });
+
+//      Intent code should go here I think.
+
     }
 
     public void lidl() {

@@ -1,7 +1,9 @@
 package ie.ul.mark_quigley.shlist;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -26,7 +28,10 @@ import java.util.List;
 public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHolder>{
 
     private double mAldiTotalCost = 0.0;
+
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
+
+
 
     public AldiAdapter() {
         CollectionReference shoplistRef = FirebaseFirestore.getInstance()
@@ -78,20 +83,58 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
         x = Math.min(Math.min(aldiPrice, lidlPrice), dunnesPrice);
 
         if (x == aldiPrice) {
-            {
-                shopListViewHolder.mItemTextView.setText(item);
-                shopListViewHolder.mQtyTestView.setText(quantity);
-                shopListViewHolder.mAldiTextView.setText(aldi);
+            shopListViewHolder.mItemTextView.setText(item);
+            shopListViewHolder.mQtyTestView.setText(quantity);
+            shopListViewHolder.mAldiTextView.setText(aldi);
+            mAldiTotalCost += (x * aldiqty);
 
-             mAldiTotalCost += (aldiqty * x );
 
-            }
-        }else{
-            shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
+            Log.d("aldiSubTotal", String.valueOf(mAldiTotalCost));
 
-        }
+//
+//            Intent intent = new Intent(AldiAdapter.this.getClass(), AldiListDetailActivity.class);
+//
+//            Bundle bundle = new Bundle( );
+//            bundle.putString("Atotal", tot);
+//            intent.putExtras(bundle);
+
+        } else shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0, 0));
 // https://stackoverflow.com/questions/39705205/setvisibilityview-gone-leaves-empty-placeholder
+        String tot = Double.valueOf(mAldiTotalCost).toString( );
+        Log.d("bob", tot);
+        AldiAdapter.funds.setFundAmount(tot);
     }
+
+
+
+
+
+    public static Fund funds = new Fund();
+
+    public static class Fund {
+
+        private static String fundAmount;
+
+        public Fund(){
+            fundAmount = "";
+        }
+
+        public Fund(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+
+        public String getFundAmount(){
+            return this.fundAmount;
+        }
+
+        public void setFundAmount(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+
+    }
+
+//    TextView atc = (TextView)fi(R.id.footer_total_sum);
+//        atc.setText(tot);
 
     @Override
     public int getItemCount() {
@@ -121,5 +164,8 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
                 }
             });
         }
+
+
+
     }
 }

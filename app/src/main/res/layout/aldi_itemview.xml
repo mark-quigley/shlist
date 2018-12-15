@@ -32,7 +32,7 @@
 
             <TextView
                 android:id="@+id/itemview_item_aldi"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_weight="3.5"

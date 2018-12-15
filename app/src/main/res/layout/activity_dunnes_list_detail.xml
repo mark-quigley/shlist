@@ -60,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cost"
+            android:maxLength="5"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_marginRight="8dp"/>

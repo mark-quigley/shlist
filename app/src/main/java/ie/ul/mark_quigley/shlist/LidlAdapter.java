@@ -24,7 +24,7 @@ import java.util.List;
 
 public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHolder>{
 
-    private double mLidlTotalCost = 0.0;
+       private double mLidlTotalCost = 0.0;
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public LidlAdapter() {
@@ -68,7 +68,6 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
         double dunnesPrice = 0.0;
         int lidlqty = 0;
         lidlqty = Integer.parseInt(quantity.toString());
-//        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
         aldiPrice = Double.parseDouble(aldi.toString( ));
         lidlPrice = Double.parseDouble(lidl.toString( ));
         dunnesPrice = Double.parseDouble(dunnes.toString( ));
@@ -83,7 +82,8 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
         } else {
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }
-        
+        String tot = Double.valueOf(mLidlTotalCost).toString( );
+        LidlAdapter.funds.setFundAmount(tot);
     }
 
 
@@ -106,17 +106,42 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
             mLidlTextView = itemView.findViewById(R.id.itemview_lidl);
 
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener( ) {
                 @Override
                 public void onClick(View view) {
-                    DocumentSnapshot ds = mShopListSnapshots.get(getAdapterPosition());
+                    DocumentSnapshot ds = mShopListSnapshots.get(getAdapterPosition( ));
 
-                    Context c = view.getContext();
+                    Context c = view.getContext( );
                     Intent intent = new Intent(c, LidlAdapterDetail.class);
-                    intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());
+                    intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId( ));
                     c.startActivity(intent);
                 }
             });
         }
+
+
     }
+    public static Fund funds = new Fund();
+
+    public static class Fund {
+
+        private static String fundAmount;
+
+        public Fund(){
+            fundAmount = "";
+        }
+
+        public Fund(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+
+        public String getFundAmount(){
+            return this.fundAmount;
+        }
+
+        public void setFundAmount(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+    }
+
 }

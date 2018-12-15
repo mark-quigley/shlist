@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class DunnesListDetailActivity extends AppCompatActivity {
@@ -34,7 +35,11 @@ public class DunnesListDetailActivity extends AppCompatActivity {
                     main();
                 }
             });
+
+            TextView dunnesTotalCost = (TextView) findViewById(R.id.footer_total_sum);
+            dunnesTotalCost.setText(DunnesAdapter.funds.getFundAmount());
         }
+
 
     public void main() {
         Intent intent = new Intent(this, MainActivity.class);

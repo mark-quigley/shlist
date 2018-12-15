@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
@@ -41,12 +42,14 @@ public class AldiListDetailActivity extends AppCompatActivity {
                 lidl();
             }
         });
+
+//        TextView aldiTotalCost = (TextView) findViewById(R.id.footer_total_sum);
+//        aldiTotalCost.setText(AldiAdapter.funds.getFundAmount());
     }
 
     public void lidl() {
         Intent intent = new Intent(this, LidlListDetailActivity.class);
         startActivity(intent);
-
     }
 
     @Override

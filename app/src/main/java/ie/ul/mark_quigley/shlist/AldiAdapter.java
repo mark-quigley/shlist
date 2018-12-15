@@ -3,7 +3,6 @@ package ie.ul.mark_quigley.shlist;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -84,9 +83,10 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
 
         }else{
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
-
         }
 // https://stackoverflow.com/questions/39705205/setvisibilityview-gone-leaves-empty-placeholder
+        String tot = Double.valueOf(mAldiTotalCost).toString( );
+        AldiAdapter.funds.setFundAmount(tot);
     }
 
     @Override
@@ -116,6 +116,29 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
                     c.startActivity(intent);
                 }
             });
+        }
+    }
+
+    public static Fund funds = new Fund();
+
+   public static class Fund {
+
+        private static String fundAmount;
+
+        public Fund(){
+            fundAmount = "";
+        }
+
+        public Fund(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+
+        public String getFundAmount(){
+            return this.fundAmount;
+        }
+
+        public void setFundAmount(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
         }
     }
 }

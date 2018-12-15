@@ -24,6 +24,7 @@ import java.util.List;
 
 public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListViewHolder>{
 
+    private double mDunnesTotalCost = 0.0;
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public DunnesAdapter() {
@@ -65,8 +66,8 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
         double aldiPrice = 0.0;
         double lidlPrice = 0.0;
         double dunnesPrice = 0.0;
-
-//        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
+        int dunnesqty = 0;
+        dunnesqty = Integer.parseInt(quantity.toString());
         aldiPrice = Double.parseDouble(aldi.toString());
         lidlPrice = Double.parseDouble(lidl.toString());
         dunnesPrice = Double.parseDouble(dunnes.toString());
@@ -77,10 +78,12 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
             shopListViewHolder.mItemTextView.setText(item);
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mDunnesTextView.setText(aldi);
+            mDunnesTotalCost += (dunnesqty * x );
         }else {
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }
-
+        String tot = Double.valueOf(mDunnesTotalCost).toString( );
+        DunnesAdapter.funds.setFundAmount(tot);
     }
 
 
@@ -114,6 +117,30 @@ public class DunnesAdapter extends RecyclerView.Adapter<DunnesAdapter.ShopListVi
                 }
             });
         }
+        }
+
+    public static Fund funds = new Fund();
+
+    public static class Fund {
+
+        private static String fundAmount;
+
+        public Fund(){
+            fundAmount = "";
+        }
+
+        public Fund(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
+
+        public String getFundAmount(){
+            return this.fundAmount;
+        }
+
+        public void setFundAmount(String fundAmountIn){
+            this.fundAmount = fundAmountIn;
+        }
     }
 }
+
 

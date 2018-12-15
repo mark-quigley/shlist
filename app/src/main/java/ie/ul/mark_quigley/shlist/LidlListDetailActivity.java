@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class LidlListDetailActivity extends AppCompatActivity {
@@ -35,7 +36,10 @@ public class LidlListDetailActivity extends AppCompatActivity {
                 dunnes();
             }
         });
-    }
+
+        TextView lidlTotalCost = (TextView) findViewById(R.id.footer_total_sum);
+        lidlTotalCost.setText(LidlAdapter.funds.getFundAmount());
+        }
 
 public void dunnes() {
         Intent intent = new Intent(this, DunnesListDetailActivity.class);

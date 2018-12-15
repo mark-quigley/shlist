@@ -57,7 +57,6 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
     @Override
     public void onBindViewHolder(@NonNull ShopListViewHolder shopListViewHolder, int i) {
         DocumentSnapshot ds = mShopListSnapshots.get(i);
-
         String item = (String) ds.get(Constants.KEY_ITEM);
         String quantity = (String) ds.get(Constants.KEY_QUANTITY);
         String aldi = (String) ds.get(Constants.KEY_ALDI);
@@ -78,14 +77,11 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
         x = Math.min(Math.min(aldiPrice, lidlPrice), dunnesPrice);
 
         if (x == aldiPrice) {
-            {
                 shopListViewHolder.mItemTextView.setText(item);
                 shopListViewHolder.mQtyTestView.setText(quantity);
                 shopListViewHolder.mAldiTextView.setText(aldi);
-
              mAldiTotalCost += (aldiqty * x );
 
-            }
         }else{
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
 

@@ -24,7 +24,7 @@ import java.util.List;
 
 public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHolder>{
 
-
+    private double mLidlTotalCost = 0.0;
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public LidlAdapter() {
@@ -48,7 +48,8 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
     @NonNull
     @Override
     public ShopListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.lidl_itemview, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.lidl_itemview, parent, false);
         return new ShopListViewHolder(itemView);
     }
 
@@ -65,6 +66,8 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
         double aldiPrice = 0.0;
         double lidlPrice = 0.0;
         double dunnesPrice = 0.0;
+        int lidlqty = 0;
+        lidlqty = Integer.parseInt(quantity.toString());
 //        //final int quantity = Integer.parseInt(quantityEditText.getText().toString();
         aldiPrice = Double.parseDouble(aldi.toString( ));
         lidlPrice = Double.parseDouble(lidl.toString( ));
@@ -76,6 +79,7 @@ public class LidlAdapter extends RecyclerView.Adapter<LidlAdapter.ShopListViewHo
             shopListViewHolder.mItemTextView.setText(item);
             shopListViewHolder.mQtyTestView.setText(quantity);
             shopListViewHolder.mLidlTextView.setText(lidl);
+            mLidlTotalCost += (lidlqty * x );
         } else {
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
         }

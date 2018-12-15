@@ -117,7 +117,6 @@ public class AldiAdapterDetail extends AppCompatActivity {
             case R.id.action_delete:
                 mDocRef.delete();
                 finish();
-
                 return true;
         }
         return super.onOptionsItemSelected(item);

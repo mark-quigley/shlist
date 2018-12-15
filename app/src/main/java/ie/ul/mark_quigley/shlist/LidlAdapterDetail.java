@@ -97,7 +97,6 @@ public class LidlAdapterDetail extends AppCompatActivity {
                 sl.put(Constants.KEY_ITEM, itemEditText.getText().toString());
                 sl.put(Constants.KEY_QUANTITY, quantityEditText.getText().toString());
                 sl.put(Constants.KEY_LIDL, lidlEditText.getText().toString());
-
                 sl.put(Constants.KEY_CREATED, new Date());
                 mDocRef.update(sl);
             }

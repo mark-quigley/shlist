@@ -88,50 +88,14 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
             shopListViewHolder.mAldiTextView.setText(aldi);
             mAldiTotalCost += (x * aldiqty);
 
-
-            Log.d("aldiSubTotal", String.valueOf(mAldiTotalCost));
-
-//
-//            Intent intent = new Intent(AldiAdapter.this.getClass(), AldiListDetailActivity.class);
-//
-//            Bundle bundle = new Bundle( );
-//            bundle.putString("Atotal", tot);
-//            intent.putExtras(bundle);
-
         } else shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0, 0));
 // https://stackoverflow.com/questions/39705205/setvisibilityview-gone-leaves-empty-placeholder
-        String tot = Double.valueOf(mAldiTotalCost).toString( );
-        Log.d("bob", tot);
-        AldiAdapter.funds.setFundAmount(tot);
+//        String tot = Double.valueOf(mAldiTotalCost).toString( );
+//        Log.d("bob", tot);
+//        AldiAdapter.funds.setFundAmount(tot);
     }
 
 
-
-
-
-    public static Fund funds = new Fund();
-
-    public static class Fund {
-
-        private static String fundAmount;
-
-        public Fund(){
-            fundAmount = "";
-        }
-
-        public Fund(String fundAmountIn){
-            this.fundAmount = fundAmountIn;
-        }
-
-        public String getFundAmount(){
-            return this.fundAmount;
-        }
-
-        public void setFundAmount(String fundAmountIn){
-            this.fundAmount = fundAmountIn;
-        }
-
-    }
 
 //    TextView atc = (TextView)fi(R.id.footer_total_sum);
 //        atc.setText(tot);
@@ -164,8 +128,28 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
                 }
             });
         }
-
-
-
     }
+
+//    public static Fund funds = new Fund();
+//
+//    public static class Fund {
+//
+//        private static String fundAmount;
+//
+//        public Fund(){
+//            fundAmount = "";
+//        }
+//
+//        public Fund(String fundAmountIn){
+//            this.fundAmount = fundAmountIn;
+//        }
+//
+//        public String getFundAmount(){
+//            return this.fundAmount;
+//        }
+//
+//        public void setFundAmount(String fundAmountIn){
+//            this.fundAmount = fundAmountIn;
+//        }
+//    }
 }

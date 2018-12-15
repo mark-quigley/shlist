@@ -43,7 +43,11 @@ public class AldiAdapterDetail extends AppCompatActivity {
 
 
         String docId = getIntent().getStringExtra(Constants.EXTRA_DOC_ID);
+       // String aldinewtotal = getIntent().getStringExtra("aldiAdapter");
+        //final TextView aldiFinalCostText = (TextView) findViewById(R.id.footer_total_sum);
+        //aldiFinalCostText.setText(aldinewtotal);
 
+        //Log.d("aldiSubTotal9", String.valueOf(aldinewtotal));
 
         mDocRef = FirebaseFirestore.getInstance()
                 .collection(Constants.COLLECTION_PATH).document(docId);
@@ -82,10 +86,12 @@ public class AldiAdapterDetail extends AppCompatActivity {
         final TextView itemEditText = view.findViewById(R.id.dialog_item_edittext);
         final TextView quantityEditText = view.findViewById(R.id.dialog_quantity_edittext);
         final TextView aldiEditText = view.findViewById(R.id.dialog_aldi_edittext);
+//        final TextView aldiFinalCostText = view.findViewById(R.id.footer_total_sum);
 
         itemEditText.setText((String)mDocSnapshot.get(Constants.KEY_ITEM));
         quantityEditText.setText((String)mDocSnapshot.get(Constants.KEY_QUANTITY));
         aldiEditText.setText((String)mDocSnapshot.get(Constants.KEY_ALDI));
+ //       aldiFinalCostText.setText(""+ AldiAdapter.getmAldiTotalCost());
 
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 

@@ -3,7 +3,6 @@ package ie.ul.mark_quigley.shlist;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,7 +24,15 @@ import java.util.List;
 
 public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHolder>{
 
-    private double mAldiTotalCost = 0.0;
+    public  double getmAldiTotalCost() {
+        return mAldiTotalCost;
+    }
+
+    public void setmAldiTotalCost(double mAldiTotalCost) {
+        this.mAldiTotalCost = mAldiTotalCost;
+    }
+
+    private  double mAldiTotalCost = 0.0;
     private List<DocumentSnapshot> mShopListSnapshots = new ArrayList<>();
 
     public AldiAdapter() {
@@ -78,18 +85,26 @@ public class AldiAdapter extends RecyclerView.Adapter<AldiAdapter.ShopListViewHo
         x = Math.min(Math.min(aldiPrice, lidlPrice), dunnesPrice);
 
         if (x == aldiPrice) {
-            {
-                shopListViewHolder.mItemTextView.setText(item);
-                shopListViewHolder.mQtyTestView.setText(quantity);
-                shopListViewHolder.mAldiTextView.setText(aldi);
+            shopListViewHolder.mItemTextView.setText(item);
+            shopListViewHolder.mQtyTestView.setText(quantity);
+            shopListViewHolder.mAldiTextView.setText(aldi);
 
-             mAldiTotalCost += (aldiqty * x );
 
-            }
-        }else{
+            mAldiTotalCost += (aldiqty * x);
+            Log.d("aldiSubTotal", String.valueOf(mAldiTotalCost));
+      //      setmAldiTotalCost(mAldiTotalCost);
+
+
+            Log.d("aldiSubTotal2", String.valueOf(mAldiTotalCost));
+//            TextView textView = (TextView) TextView.id findViewById(R.id.footer_total_sum);
+//            textView.setText(mAldiTotalSum);
+
+
+        } else{
             shopListViewHolder.itemView.setLayoutParams(new LinearLayout.LayoutParams(0,0));
 
         }
+
 // https://stackoverflow.com/questions/39705205/setvisibilityview-gone-leaves-empty-placeholder
     }
 
